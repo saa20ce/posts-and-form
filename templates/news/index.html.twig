@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All News{% endblock %}
+
+{% block body %}
+<div class="container">
+<h1>All News</h1>
+    <ul>
+        {% for news in news %}
+            <li>
+                <a href="{{ path('news', {'id': news.id}) }}">
+                    <h2>{{ news.title }}</h2>
+                </a>
+                <p>{{ news.content|slice(0, 100) }}...</p>
+                <p><small>{{ news.publicationDate|date('M d, Y') }}</small></p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

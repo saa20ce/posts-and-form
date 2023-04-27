@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Обратная связь{% endblock %}
+
+{% block body %}
+<div class="container">
+<h1>Обратная связь</h1>
+{{ form_start(form) }}
+<div class="form-group">
+{{ form_label(form.fullName) }}
+{{ form_widget(form.fullName, {'attr': {'class': 'form-control'}}) }}
+{{ form_errors(form.fullName) }}
+</div>
+<div class="form-group">
+{{ form_label(form.address) }}
+{{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+{{ form_errors(form.address) }}
+</div>
+<div class="form-group">
+{{ form_label(form.phone) }}
+{{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+{{ form_errors(form.phone) }}
+</div>
+<div class="form-group">
+{{ form_label(form.email) }}
+{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+{{ form_errors(form.email) }}
+</div>
+<button type="submit" class="btn btn-primary">Отправить</button>
+{{ form_end(form) }}
+</div>
+{% endblock %}
