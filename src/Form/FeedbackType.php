@@ -20,7 +20,10 @@ class FeedbackType extends AbstractType
     {
         $builder
             ->add('fullName', TextType::class, [
-                'label' => 'Full Name',
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Ваше имя',
+                ],
                 'constraints' => [
                     new NotBlank(['message' => 'Please enter your full name']),
                     new Regex([
@@ -30,13 +33,19 @@ class FeedbackType extends AbstractType
                 ]
             ])
             ->add('address', TextType::class, [
-                'label' => 'Address',
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Ваш адрес',
+                ],
                 'constraints' => [
                     new NotBlank(['message' => 'Please enter your address'])
                 ]
             ])
             ->add('phone', TextType::class, [
-                'label' => 'Phone Number',
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Ваш телефон',
+                ],
                 'constraints' => [
                     new NotBlank(['message' => 'Please enter your phone number']),
                     new Regex([
@@ -46,7 +55,10 @@ class FeedbackType extends AbstractType
                 ]
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email Address',
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Ваш email',
+                ],
                 'constraints' => [
                     new NotBlank(['message' => 'Please enter your email address']),
                     new Email(['message' => 'Please enter a valid email address'])
